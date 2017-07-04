@@ -15,10 +15,38 @@
 
     <script type="text/babel">
 
+        function formatName(user) {
+          return user.firstname + ' ' + user.lastname;
+        };
+
+        const user = {
+          firstname : 'Naragorn',
+          lastname : 'Chaimuangmai',
+          avatarUrl : 'https://image.freepik.com/free-icon/woman-avatar_318-68929.jpg'
+        };
+
+        const element = (
+          <h1>
+            Hello, {formatName(user)}
+          </h1>
+        );
+
+        const element2 = <div tabIndex="0">XXX</div>;
+
+        const element3 = <img src={user.avatarUrl}></img>;
+
+        const title = response.potentiallyMaliciousInput;
+        // This is safe:
+        const element4 = <h1>{title}</h1>;
+
         ReactDOM.render(
-          <h1>Hello World</h1>,
+          element4,
           document.getElementById('example')
         );
     </script>
+
+    <!--By default, React DOM escapes any values embedded in JSX before rendering them. Thus it ensures that you can never inject anything that's not explicitly written in your application. Everything is converted to a string before being rendered. This helps prevent XSS (cross-site-scripting) attacks.
+
+    // JSX Represents Objects-->
   </body>
 </html>
