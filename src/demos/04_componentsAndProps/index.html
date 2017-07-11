@@ -11,14 +11,29 @@
   </head>
   <body>
 
-    <div id="example"/>
+    <div id="root"/>
 
     <script type="text/babel">
+        
+        function Welcome(props) {
+          return <h1>Hello, {props.name}</h1>;
+        }
 
+        function App() {
+          return (
+            <div>
+              <Welcome name="Sara" />
+              <Welcome name="John" />
+              <Welcome name="Marry" />
+            </div>
+          );
+        }
+
+        const element = <App />;
         ReactDOM.render(
-          <h1>Hello World</h1>,
-          document.getElementById('example')
-        );
+          element,
+          document.getElementById('root')
+        );    
     </script>
   </body>
 </html>

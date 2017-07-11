@@ -11,14 +11,24 @@
   </head>
   <body>
 
-    <div id="example"/>
+    <div id="root"/>
 
     <script type="text/babel">
 
-        ReactDOM.render(
-          <h1>Hello World</h1>,
-          document.getElementById('example')
+      function tick() {
+        const element = (
+          <div>
+            <h1>Hello, world!</h1>
+            <h2>It is {new Date().toLocaleTimeString()}.</h2>
+          </div>
         );
+        ReactDOM.render(
+          element,
+          document.getElementById('root')
+        );
+      }
+
+      setInterval(tick, 1000);
     </script>
   </body>
 </html>
